@@ -1,4 +1,4 @@
-const member = [
+const members = [
     {
         "name": "최정재",
         "part": "Server",
@@ -217,14 +217,7 @@ const member = [
     }
 ]
 
-console.log(member.length);
+//console.log(members.filter(item => item.status === 'YB').length);
 
-var count  = 0;
-
-for(i = 0; i < member.length; i++) {
-    if(member[i].status === "OB") {
-        count++;
-    }
-}
-
-console.log(`OB 인원 수: ${count}`);
+//외부 파일에서 이 모듈에 접근할 수 있도록
+module.exports = members;
