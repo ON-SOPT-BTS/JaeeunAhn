@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const crypto = require('crypto');
+const { type } = require('os');
 
 /**
 const numArr = [1, 2, 3, 4, 5];
@@ -17,11 +18,22 @@ numArr.forEach((num) => {
 })
 */
 
-const encrypto = (password) => {
-    return new Promise((resolve, reject) => {
-        crypto.pbkdf2(password, salt, 100000, 64, 'sha512', (err, derivedKey) => {
-            if (err) reject(err);
-            resolve(derivedKey.toString('hex'));
-        });
-    });
-};
+
+// const encrypto = (password) => {
+//     return new Promise((resolve, reject) => {
+//         crypto.pbkdf2(password, salt, 100000, 64, 'sha512', (err, derivedKey) => {
+//             if (err) reject(err);
+//             resolve(derivedKey.toString('hex'));
+//         });
+//     });
+// };
+
+crypto.randomBytes(64, (err, buf) => {
+    const salt = buf.toString('base64');
+    console.log(`salt: ${salt}`);
+    crypto.pbkdf2('비밀번호', salt, 10000, 54, 'sha512', (err, key) => {
+        console.log(`password : ${key.toString('base64')}`)
+        console.log(`key : ${key}`);
+        console.log(typeof key);
+    })
+})
