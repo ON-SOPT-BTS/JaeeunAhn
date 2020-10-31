@@ -1,4 +1,4 @@
-const members = [
+module.exports = [
     {
         "name": "최정재",
         "part": "Server",
@@ -7,7 +7,7 @@ const members = [
     },
     {
         "name": "박남선",
-        "part": "Server",
+        "part": "iOS",
         "status": "OB",
         "gender": "여"
     },
@@ -55,7 +55,7 @@ const members = [
     },
     {
         "name": "최정훈",
-        "part": "Server",
+        "part": "iOS",
         "status": "OB",
         "gender": "여"
     },
@@ -103,7 +103,7 @@ const members = [
     },
     {
         "name": "오승준",
-        "part": "Server",
+        "part": "iOS",
         "status": "YB",
         "gender": "남"
     },
@@ -127,7 +127,7 @@ const members = [
     },
     {
         "name": "임찬기",
-        "part": "Server",
+        "part": "iOS",
         "status": "YB",
         "gender": "남"
     },
@@ -139,7 +139,7 @@ const members = [
     },
     {
         "name": "신지한",
-        "part": "Server",
+        "part": "iOS",
         "status": "YB",
         "gender": "여"
     },
@@ -150,8 +150,14 @@ const members = [
         "gender": "여"
     },
     {
+        "name": "최영훈",
+        "part": "iOS",
+        "status": "YB",
+        "gender": "여"
+    },
+    {
         "name": "송정훈",
-        "part": "Server",
+        "part": "iOS",
         "status": "YB",
         "gender": "남"
     },
@@ -216,8 +222,3 @@ const members = [
         "gender": "여"
     }
 ]
-
-//console.log(members.filter(item => item.status === 'YB').length);
-
-//외부 파일에서 이 모듈에 접근할 수 있도록
-module.exports = members;
